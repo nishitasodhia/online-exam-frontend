@@ -12,13 +12,10 @@ export class LoginComponent  {
   username:string;
   pass:string;
   decision:string;
-  loadComponent:boolean;
+ 
   constructor(private router:Router) { }
     
-  //loadMyRegisterComponent() {
-   // this.loadComponent = true;
-    
- // }
+
   login(){
 
     if(this.username == 'admin' && this.pass == 'admin'){

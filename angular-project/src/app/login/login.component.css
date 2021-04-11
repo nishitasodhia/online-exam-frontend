@@ -8,3 +8,7 @@ div#container div{
     color: #a94442;
     background-color: pink;
 }
+p{
+    text-align: center;
+    margin: auto;
+}
