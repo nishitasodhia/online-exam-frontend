@@ -1,0 +1,10 @@
+form{
+    text-align: center;
+    margin: auto;
+    padding: 20px;
+    line-height: 3em;
+}
+div#container div{
+    color: #a94442;
+    background-color: pink;
+}

@@ -1,1 +1,15 @@
-<p>login works!</p>
+
+    <form (ngSubmit) = "login()">
+        <label>User name :</label>
+            <input type = "email" name="username" [(ngModel)]="username"/><br/>
+        <label>Password :</label>
+            <input type = "password" name="pass" [(ngModel)]="pass"/><br/>
+        <button type="submit">Login</button>
+        <div id= container *ngIf="decision">login {{decision}}
+        </div>
+    </form>
+    <p>Don't have an account 
+        <button type = "submit">Register Here</button> 
+    </p>  
+   
+
