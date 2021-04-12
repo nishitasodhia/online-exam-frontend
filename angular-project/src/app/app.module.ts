@@ -15,7 +15,7 @@ import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.compo
 import { UserDashboardComponent } from './user-dashboard/user-dashboard.component';
 import { AddQuestionComponent } from './add-question/add-question.component';
 import { RemoveQuestionComponent } from './remove-question/remove-question.component';
-import { ResultComponent } from './result/result.component';
+//import { ResultComponent } from './result/result.component';
 import { SearchUserComponent } from './search-user/search-user.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { FormsModule } from '@angular/forms';
@@ -34,7 +34,7 @@ import { FormsModule } from '@angular/forms';
     UserDashboardComponent,
     AddQuestionComponent,
     RemoveQuestionComponent,
-    ResultComponent,
+   // ResultComponent,
     SearchUserComponent,
     NavbarComponent
   ],
