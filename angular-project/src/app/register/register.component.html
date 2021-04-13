@@ -1,29 +1,29 @@
 <div class="centerdiv">
-    <form>
+    <form (ngSubmit)="run()">
         <label>Enter First Name :</label>
-            <input type = "text" name = "first_name" /><br/>
+            <input type = "text" name = "first-name" [(ngModel)]="user.first-name"/><br/>
         <label>Enter Middle Name :</label>
-            <input type = "text" name = "middle_name" /><br/>
+            <input type = "text" name = "middle-name" [(ngModel)]="user.middle-name"/><br/>
         <label>Enter Last Name :</label>
-            <input type = "text" name = "last_name" /><br/>
+            <input type = "text" name = "last-name" [(ngModel)]="user.last-name" /><br/>
         <label>Enter Email :</label>
-            <input type = "email" name="email" /><br/>
+            <input type = "email" name="email" [(ngModel)]="user.email" /><br/>
         <label>Mobile no :</label>
-            <input type = "number" name = "mobile" /><br/>
+            <input type = "number" name = "mobile" [(ngModel)]="user.mobile"/><br/>
         <label>City</label>
-            <input type = "text" name = "city" /><br/>
+            <input type = "text" name = "city" [(ngModel)]="user.city" /><br/>
         <label>Date Of Birth :</label>
-            <input type = "date"name = "dob" /><br/>
+            <input type = "date"name = "dob" [(ngModel)]="user.dob"/><br/>
         <label>State :</label>
-            <input type = "text"  name = "state" /><br/>
+            <input type = "text"  name = "state" [(ngModel)]="user.state"/><br/>
         <label>Qualification :</label>
-            <input type = "text"  name = "qualification" /><br/>
+            <input type = "text"  name = "qualification" [(ngModel)]="user.qualificaation" /><br/>
         <label>Enter Year of Completion :</label>
-            <input type = "date"  name = "yoc"/> <br/>
+            <input type = "date"  name = "yoc" [(ngModel)]="user.yoc"/> <br/>
         <label>Password</label>
-            <input type="password" name = "password"  /><br/>
+            <input type="password" name = "password" [(ngModel)]="user.password" /><br/>
         <label>Confirm Password</label>
-            <input type="password" name = "confirm-password"  /><br/>
+            <input type="password" name = "confirm_password"  [(ngModel)]="user.confirm_password"/><br/>
         <button type="submit">Register</button>
     </form>
 </div>

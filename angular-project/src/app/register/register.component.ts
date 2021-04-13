@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { RegisterService } from '../register.service';
 
 @Component({
   selector: 'register',
@@ -7,10 +8,21 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent  {
-   
-  first_name:String;
-  middle_name:string;
-  last_name:string;
+  
+  user : User = new User();
+  constructor(private service:RegisterService) { }
+  run(){
+    this.service.run(this.user).subscribe(data =>{
+      alert(JSON.stringify(this.user));
+    })
+  }
+  
+
+}
+export class User{
+  fname:String;
+  mname:string;
+  lname:string;
   email:string;
   mobile:string;
   city:string;
@@ -19,8 +31,5 @@ export class RegisterComponent  {
   qualification:string;
   yoc:Date;
   password:string;
-  constructor() { }
-
-  
-
+  confirm_password:string;
 }
