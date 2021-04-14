@@ -25,7 +25,7 @@ export class LoginComponent  {
      console.log("valid admin");
     this.router.navigate(['admin-dashboard']);
     }
-else if(this.username == 'shiv' && this.pass == '1305'){
+  else if(this.username == 'shiv' && this.pass == '1305'){
       sessionStorage.setItem('loggedInUsername', this.username);
       this.decision=true;
       alert("welcome user");

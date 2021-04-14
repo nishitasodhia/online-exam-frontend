@@ -3,8 +3,6 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-//import { AdminComponent } from './admin/admin.component';
-import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
 import { AboutUsComponent } from './about-us/about-us.component';
@@ -15,16 +13,15 @@ import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.compo
 import { UserDashboardComponent } from './user-dashboard/user-dashboard.component';
 import { AddQuestionComponent } from './add-question/add-question.component';
 import { RemoveQuestionComponent } from './remove-question/remove-question.component';
-//import { ResultComponent } from './result/result.component';
 import { SearchUserComponent } from './search-user/search-user.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { FormsModule } from '@angular/forms';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { UserRegistrationComponent } from './user-registration/user-registration.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    RegisterComponent,
     LoginComponent,
     HomeComponent,
     AboutUsComponent,
@@ -35,15 +32,16 @@ import { HttpClient } from '@angular/common/http';
     UserDashboardComponent,
     AddQuestionComponent,
     RemoveQuestionComponent,
-   // ResultComponent,
     SearchUserComponent,
-    NavbarComponent
+    NavbarComponent,
+    UserRegistrationComponent,
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClient
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
