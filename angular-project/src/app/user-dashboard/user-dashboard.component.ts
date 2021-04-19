@@ -10,7 +10,8 @@ export class UserDashboardComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    this.username=sessionStorage.getItem('loggedInUsername');
+    this.username=sessionStorage.getItem('userName');
   }
+ 
 
 }

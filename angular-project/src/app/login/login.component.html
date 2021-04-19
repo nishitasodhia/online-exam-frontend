@@ -1,16 +1,22 @@
 
-    <form (ngSubmit) = "login()">
-        <label>User name :</label>
-            <input type = "email" name="username" [(ngModel)]="username"/><br/>
-        <label>Password :</label>
-            <input type = "password" name="pass" [(ngModel)]="pass"/><br/>
-        <button type="submit">Login</button>
-        <div id= container *ngIf="decision">login {{decision}}
+<form #loginForm="ngForm" (ngSubmit) = "loginCheck()">
+    <label>User name :</label>
+        <input type = "email" required #email="ngModel" name="username" [(ngModel)]="login.email"/><br/>
+        <div *ngIf="email.invalid && (email.dirty || email.touched)">
+        <div *ngIf="email.errors.required">Email is required</div>
         </div>
-    </form>
-    <p>Don't have an Account
-    <a href="http://localhost:4200/register">Register Here</a>
-    </p>
+
+
+    <label>Password :</label>
+        <input type = "password" required #password="ngModel" name="pass" [(ngModel)]="login.password"/><br/>
+        <div *ngIf="password.invalid && (password.dirty || password.touched)">
+        <div *ngIf="password.errors.required">Password is required</div>
+        </div>
+
+    <button [disabled]="!loginForm.form.valid" type="submit" >Login</button>
+</form>
+<p>Don't have an Account
+<a href="http://localhost:4200/user-registration">Register Here</a>
+</p>
       
    
-

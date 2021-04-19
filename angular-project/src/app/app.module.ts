@@ -18,6 +18,8 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { UserRegistrationComponent } from './user-registration/user-registration.component';
+import { RegistrationConfirmationComponent } from './registration-confirmation/registration-confirmation.component';
+import { ConfirmEqualValidatorDirective } from './confirm-equal-validator.directive';
 
 @NgModule({
   declarations: [
@@ -35,6 +37,8 @@ import { UserRegistrationComponent } from './user-registration/user-registration
     SearchUserComponent,
     NavbarComponent,
     UserRegistrationComponent,
+    RegistrationConfirmationComponent,
+    ConfirmEqualValidatorDirective
     
   ],
   imports: [

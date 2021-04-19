@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Login } from '../appmodel/login';
+import { RegisterService } from '../register.service';
 
 @Component({
   selector: 'login',
@@ -8,39 +10,35 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent  {
+
+  login: Login = new Login();
+  message: string;
+  decision: string;
+  constructor(private registerService: RegisterService, private router:Router) { }
+    
+
+  loginCheck(){
+    //console.log(this.login);
+    this.registerService.login(this.login).subscribe(response => {
+      //alert(JSON.stringify(response));
+      alert(response["message"]);
+      console.log(response);
+      this.decision=response["status"];
+      if(response["status"] == true) {
+        this.message = response["message"];
+        let userId = response["userId"];
+        let userName = response["name"];
+        sessionStorage.setItem('userId', String(userId));
+        sessionStorage.setItem('userName', userName);
+        this.router.navigate(['user-dashboard']);
+      }
+      else
+        this.message = response["message"];
+    })
   
-  username:string;
-  pass:string;
-  decision:boolean;
- 
-  constructor(private router:Router) { }
-    
-
-  login(){
-    
-    if(this.username == "admin" && this.pass == "admin"){
-     sessionStorage.setItem('loggedInUsername', this.username);
-     this.decision=true;
-     alert("Login successful");
-     console.log("valid admin");
-    this.router.navigate(['admin-dashboard']);
-    }
-  else if(this.username == 'shiv' && this.pass == '1305'){
-      sessionStorage.setItem('loggedInUsername', this.username);
-      this.decision=true;
-      alert("welcome user");
-      this.router.navigate(['user-dashboard']);
-    }
-
-    else{
-      
-    this.decision=false;
-    alert("login denied");
     }
 
   }
-
-}
 
   
 

@@ -15,7 +15,7 @@ export class NavbarComponent implements OnInit {
     function closeNav(){
       this.show=true;
       if(this.router.navigate[('admin-dashboard')]==true){
-      this.show=false;
+        this.show=false;
       }
       else{
       this.show=true;
