@@ -20,6 +20,8 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { UserRegistrationComponent } from './user-registration/user-registration.component';
 import { RegistrationConfirmationComponent } from './registration-confirmation/registration-confirmation.component';
 import { ConfirmEqualValidatorDirective } from './confirm-equal-validator.directive';
+import { NgxCaptchaModule } from 'ngx-captcha';
+import { RecaptchaFormsModule } from 'ng-recaptcha';
 
 @NgModule({
   declarations: [
@@ -46,6 +48,8 @@ import { ConfirmEqualValidatorDirective } from './confirm-equal-validator.direct
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
+    NgxCaptchaModule,
+    RecaptchaFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
