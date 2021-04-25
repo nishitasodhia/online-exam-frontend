@@ -1,0 +1,20 @@
+<div>
+    <table>
+        <thead>
+            <tr class="head">
+                <th>Subject</th>
+                <th>Level</th>
+                <th>Attempt number</th>
+                <th>Score</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let data of testHistory">
+                <td [ngClass]="{'green' : data.score > 69, 'red' : data.score < 70}">{{data.subName}}</td>
+                <td [ngClass]="{'green' : data.score > 69, 'red' : data.score < 70}">{{data.level}}</td>
+                <td [ngClass]="{'green' : data.score > 69, 'red' : data.score < 70}">{{data.attempts}}</td>
+                <td [ngClass]="{'green' : data.score > 69, 'red' : data.score < 70}">{{data.score}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

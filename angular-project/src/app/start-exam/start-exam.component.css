@@ -1,0 +1,29 @@
+h1{
+    text-align: center;
+    display: block;
+    margin: auto;
+    min-width: 160px;
+    padding: 12px 16px;  
+}
+
+button{
+    text-align: center;
+    display: block;
+    margin: auto;
+    min-width: 200px;
+    box-shadow: 0px 8px 16px 0px rgba(97, 110, 96, 0.2);
+    padding: 12px 16px;  
+}
+
+.subject-level{
+    position: absolute;
+    top: 240px;
+    right: 45px;
+    font-size: 18px;
+}
+.attempts{
+    position: absolute;
+    top: 280px;
+    right: 45px;
+    font-size: 18px;
+}

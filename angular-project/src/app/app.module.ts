@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
@@ -25,6 +24,11 @@ import { AdminLevelsComponent } from './admin-levels/admin-levels.component';
 import { DisplayQuestionComponent } from './display-question/display-question.component';
 import { RemoveLevelsComponent } from './remove-levels/remove-levels.component';
 import { RemoveQuestionDisplayComponent } from './remove-question-display/remove-question-display.component';
+import { LevelsComponent } from './levels/levels.component';
+import { StartExamComponent } from './start-exam/start-exam.component';
+import { ResultComponent } from './result/result.component';
+import { TestHistoryPageComponent } from './test-history-page/test-history-page.component';
+import { DisplaySearchedUserComponent } from './display-searched-user/display-searched-user.component';
 
 @NgModule({
   declarations: [
@@ -48,8 +52,12 @@ import { RemoveQuestionDisplayComponent } from './remove-question-display/remove
     AdminLevelsComponent,
     DisplayQuestionComponent,
     RemoveQuestionDisplayComponent,
-    RemoveLevelsComponent
-    
+    RemoveLevelsComponent,
+    LevelsComponent,
+    StartExamComponent,
+    ResultComponent,
+    TestHistoryPageComponent,
+    DisplaySearchedUserComponent
   ],
   imports: [
     BrowserModule,

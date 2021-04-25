@@ -1,1 +1,45 @@
-<p>search-user works!</p>
+<form (ngSubmit) = "searchUser()">
+    <!--#search="ngForm"-->
+    <label>Subject: </label>
+    <select name="subject" required #subject="ngModel" [(ngModel)] =sub>
+        <option>Java</option>
+        <option>SQL</option>
+        <option>PHP</option>
+    </select><br />
+    <!--<div *ngIf="subject.invalid && (subject.dirty || subject.touched)">
+        <div *ngIf="subject.errors.required">Subject is required</div>
+    </div>-->
+
+    <label>Level: </label>
+    <select name="level" required #level="ngModel" [(ngModel)] =lev>
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+    </select><br />
+    <!--<div *ngIf="level.invalid && (level.dirty || level.touched)">
+        <div *ngIf="level.errors.required">Level is required</div>
+    </div>-->
+    
+    <label>City: </label>
+    <select name="city" required #city="ngModel" [(ngModel)] =citys>
+        <option>Mumbai</option>
+        <option>Nagpur</option>
+        <option>Amravati</option>
+    </select><br />
+    <!--<div *ngIf="city.invalid && (city.dirty || city.touched)">
+        <div *ngIf="city.errors.required">Level is required</div>
+    </div>-->
+
+    <label>State: </label>
+    <select name="state" required #state="ngModel" [(ngModel)] =states>
+        <option>Maharashtra</option>
+        <option>Gujarat</option>
+        <option>Goa</option>
+    </select><br />
+    <!--<div *ngIf="state.invalid && (state.dirty || state.touched)">
+        <div *ngIf="state.errors.required">Start is required</div>
+    </div>-->
+
+    <button type="submit">Search</button>
+    <!--[disabled]="!search.form.valid"-->
+</form>

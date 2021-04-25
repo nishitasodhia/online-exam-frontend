@@ -1,57 +1,9 @@
-Welcome {{username}}
-<p>Select Exam</p>
-<!--<button type="submit">Java</button><br/>
-<select  name="java1" placeholder="Java" ng-model="data.singleSelect">
-    <option>Level 1</option>
-    <option>Level 2</option>
-    <option>Level 3</option>
-</select><br />-->
-<select name="java1" required ng-model="data.singleSelect">
-    <option value="" disabled selected>Java</option>
-    <option value="level">Level 1</option>
-    <option value="level2">Level 2</option>
-    <option value="level3">Level 3</option>
-</select>
-<span>  {{data}} </span>
-<div></div>
-
-<!--<button type="submit">SQL</button><br/>-->
-<select name="sql1" required ng-model="data.singleSelect">
-    <option value="" disabled selected>SQL</option>
-    <option value="level1">Level 1</option>
-    <option value="level2">Level 2</option>
-    <option value="level3">Level 3</option>
-</select>
-  
-<select name="php" required ng-model="data.singleSelect">
-    <option value="" disabled selected>PHP</option>
-    <option value="level1">Level 1</option>
-    <option value="level2">Level 2</option>
-    <option value="level3">Level 3</option>
-</select>
-
-<select name="C#/.Net" required ng-model="data.singleSelect">
-    <option value="" disabled selected>C#/.Net</option>
-    <option value="level1">Level 1</option>
-    <option value="level2">Level 2</option>
-    <option value="level3">Level 3</option>
-</select>
-
-<select name="c" required ng-model="data.singleSelect">
-    <option value="" disabled selected>C/C++</option>
-    <option value="level1">Level 1</option>
-    <option value="level2">Level 2</option>
-    <option value="level3">Level 3</option>
-</select>
-
-<select name="python" required ng-model="data.singleSelect">
-    <option value="" disabled selected>Python</option>
-    <option value="level1">Level 1</option>
-    <option value="level2">Level 2</option>
-    <option value="level3">Level 3</option>
-</select>
-
-<!--<button type="submit">PHP</button><br/>
-<button type="submit">C#/.Net</button><br/>
-<button type="submit">C/C++</button><br/>
-<button type="submit">Python</button><br/>-->
+<h2>Welcome {{username}}</h2>
+<h1><p>Select Exam</p></h1>
+<button  (click)=java($event.target)><h1>Java</h1></button><br/>
+<button  (click)=sql($event.target)><h1>SQL</h1></button><br/>
+<button  (click)=php($event.target)><h1>PHP</h1></button><br/>
+<button  (click)=net() type="submit"><h1>C#/.Net</h1></button><br/>
+<button  (click)=clang() type="submit"><h1>C/C++</h1></button><br/>
+<button  (click)=pylang() type="submit"><h1>Python</h1></button><br/>
+<button  (click)=testHistory()><h1>View<br />Progress</h1></button>
