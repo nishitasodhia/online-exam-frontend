@@ -22,5 +22,5 @@ describe('SearchUserComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
-});
+}); 
 

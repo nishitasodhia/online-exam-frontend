@@ -23,4 +23,3 @@ describe('LevelsComponent', () => {
     expect(component).toBeTruthy();
   });
 });
-

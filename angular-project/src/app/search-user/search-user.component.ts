@@ -21,6 +21,6 @@ export class SearchUserComponent {
     this.service.searchUser(this.sub,this.lev,this.citys,this.states).subscribe(data =>{
       sessionStorage.setItem('userDetails',JSON.stringify(data));
       this.router.navigate(['display-searched-user'])
-    })
+    }) 
   }
 } 

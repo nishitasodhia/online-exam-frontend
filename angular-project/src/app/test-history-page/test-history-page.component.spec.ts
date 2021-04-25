@@ -22,4 +22,4 @@ describe('TestHistoryPageComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
-}); 
+});

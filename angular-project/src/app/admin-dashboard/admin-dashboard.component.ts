@@ -12,5 +12,4 @@ export class AdminDashboardComponent implements OnInit {
   ngOnInit(): void {
     this.username=sessionStorage.getItem('loggedInUsername');
   }
-
 }

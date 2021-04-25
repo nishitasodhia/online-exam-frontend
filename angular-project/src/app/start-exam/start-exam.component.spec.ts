@@ -22,4 +22,4 @@ describe('StartExamComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
-}); 
+});

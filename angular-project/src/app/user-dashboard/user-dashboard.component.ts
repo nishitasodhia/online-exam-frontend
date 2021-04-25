@@ -18,7 +18,7 @@ export class UserDashboardComponent {
   this.username=sessionStorage.getItem('userName');
   console.log(this.data)
   }
-
+  
   java(text){
     this.subject= text.textContent
     //console.log(this.subject);

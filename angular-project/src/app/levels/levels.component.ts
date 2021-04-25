@@ -40,9 +40,9 @@ export class LevelsComponent implements OnInit {
     else{
       this.selectedLevel=3;
      this.navigate(this.selectedLevel);
-    }
+    } 
   }
-  
+
   navigate(selectedLevel){
       //alert("Inside subid subscription")
       this.service.level(sessionStorage.getItem('subject'), this.userId, selectedLevel).subscribe(value => {

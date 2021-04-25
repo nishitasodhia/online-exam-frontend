@@ -8,6 +8,5 @@ import { Component, OnInit } from '@angular/core';
 export class TestHistoryPageComponent{
   testHistory:any = JSON.parse(sessionStorage.getItem('tHistory'));
 
-  constructor() { }
-
+  constructor() {}
 } 
