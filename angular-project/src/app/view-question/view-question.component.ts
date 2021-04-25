@@ -3,11 +3,11 @@ import { Router } from '@angular/router';
 import { QuestionService } from '../question.service';
 
 @Component({
-  selector: 'remove-question',
-  templateUrl: './remove-question.component.html',
-  styleUrls: ['./remove-question.component.css']
+  selector: 'view-question',
+  templateUrl: './view-question.component.html',
+  styleUrls: ['./view-question.component.css']
 })
-export class RemoveQuestionComponent implements OnInit {
+export class ViewQuestionComponent implements OnInit {
   subName: string;
   subject: any=[];
   data: any;
@@ -22,10 +22,10 @@ export class RemoveQuestionComponent implements OnInit {
       })
   }
 
-  sendDataToAdminToRemove(e)
+  sendDataToAdmin(e)
   {
    let value = e.target.innerText;
-   this.router.navigate(['/remove-levels'], { queryParams: { questionValue: value  } });
+   this.router.navigate(['/admin-levels'], { queryParams: { questionValue: value  } });
 
 console.log(e.target.innerText);
   }

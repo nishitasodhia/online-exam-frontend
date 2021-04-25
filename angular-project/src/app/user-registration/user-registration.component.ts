@@ -23,11 +23,9 @@ function phonenumber(inputtxt)
 })
 export class UserRegistrationComponent {
   user: User = new User();
-  siteKey:string;
   theme:string;
   constructor(private service: RegisterService, private router: Router) { 
-    this.siteKey='6LfxOrAaAAAAAGP8yzMnhuuIEJoO6wl2a-xH07Lh';
-    this.theme='Dark';
+
   }
   
 

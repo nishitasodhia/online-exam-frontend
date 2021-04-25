@@ -1,1 +1,59 @@
-<p>add-question works!</p>
+
+<div class = "maindiv">
+    <h2>Add Question</h2>
+<select placeholder="Select Subject" [(ngModel)] = "subName" >
+   <option>
+        Select 
+    </option>
+    <option *ngFor = "let s of subjectNameAndId" value = {{s.id}}>{{s.subName}}
+        
+    </option>
+</select>
+
+    <form #addQuestionForm= "ngForm" (ngSubmit) = "add()">
+        <textarea  required name="question" #question="ngModel" placeholder="Question to be added.." cols="50" rows="10" [(ngModel)] = "ques.question"></textarea>
+        <div id ="container" *ngIf="question.invalid && (question.dirty || question.touched)">
+            <div *ngIf="question.errors.required">Question is required</div>
+        </div><br />
+        <label>A.</label>
+            <input type = "text" placeholder="Option 1" required name ="option1" #option1="ngModel" [(ngModel)]="ques.option1" />
+            <div id ="container" *ngIf="option1.invalid && (option1.dirty || option1.touched)">
+                <div *ngIf="option1.errors.required">Option 1 is required</div>
+            </div><br />
+        <label>B.</label>
+            <input type = "text" placeholder="Option 2" required name ="option2" #option2="ngModel" [(ngModel)]="ques.option2" />
+            <div id ="container" *ngIf="option2.invalid && (option2.dirty || option2.touched)">
+                <div *ngIf="option2.errors.required">Option 2 is required</div>
+            </div><br />
+        <label>C.</label>
+            <input type = "text" placeholder="Option 3" required name ="option3" #option3="ngModel" [(ngModel)]="ques.option3" />
+            <div id ="container" *ngIf="option3.invalid && (option3.dirty || option3.touched)">
+                <div *ngIf="option3.errors.required">Option 3 is required</div>
+            </div><br />
+        <label>D.</label>
+            <input type = "text" placeholder="Option 4" required name ="option4" #option4="ngModel" [(ngModel)]="ques.option4" />
+            <div id ="container" *ngIf="option4.invalid && (option4.dirty || option4.touched)">
+                <div *ngIf="option4.errors.required">Option 4 is required</div>
+            </div><br />
+        <label>Correct Answer:</label>
+            <input type = "text" placeholder="Correct Answer" required name ="correctAnswer" #correctAnswer="ngModel" [(ngModel)]="ques.correctAnswer" />
+            <div id ="container" *ngIf="correctAnswer.invalid && (correctAnswer.dirty || correctAnswer.touched)">
+                <div *ngIf="correctAnswer.errors.required">Correct Answer is required</div>
+            </div><br />
+        <label>Marks:</label>
+            <input type = "number" placeholder="Marks" name ="marks" #marks="ngModel" [(ngModel)]="ques.marks" />
+            <div id ="container" *ngIf="marks.invalid && (marks.dirty || marks.touched)">
+                <div *ngIf="marks.errors.required">Marks required</div>
+            </div><br />
+        <label>Difficulty Level:</label>
+            <select  required name = "levels" #levels="ngModel" [(ngModel)]="ques.levels">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+            </select>
+            <div id ="container" *ngIf="levels.invalid && (levels.dirty || levels.touched)">
+                <div *ngIf="levels.errors.required">Level is required</div>
+            </div><br />
+        <button [disabled]="!addQuestionForm.form.valid" type= "submit">Add Question</button>
+    </form>
+</div>

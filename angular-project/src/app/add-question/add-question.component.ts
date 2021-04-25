@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { Question } from '../appmodel/question';
+import { Subject } from '../appmodel/admin-subject';
+import { QuestionService } from '../question.service';
 
 @Component({
   selector: 'add-question',
@@ -6,10 +10,34 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./add-question.component.css']
 })
 export class AddQuestionComponent implements OnInit {
+  subjectNameAndId: any=[];
+  id: number;
+  ques: Question = new Question();
+  subject: any=[];
+  subName: any;
 
-  constructor() { }
+
+  constructor(private questionService: QuestionService, private router: Router) { }
 
   ngOnInit(): void {
+    this.questionService.getSubAndId().subscribe(data =>{
+      this.subjectNameAndId = data;
+    })
   }
+  add(){
+    
+   this.ques.subject.id=this.subName;
+   alert(JSON.stringify(this.ques))
+    this.questionService.addQuestion(this.ques).subscribe(data =>{
+      alert(JSON.stringify(data));
+      data=this.ques;
+      
+    })
+  }
+    /*fetchSubject(){
+      this.questionService.getSubAndId(this.subName).subscribe(data =>{
+        this.subject = data;
+      })
+    }*/
 
 }

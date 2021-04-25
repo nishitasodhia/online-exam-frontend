@@ -16,12 +16,15 @@ import { RemoveQuestionComponent } from './remove-question/remove-question.compo
 import { SearchUserComponent } from './search-user/search-user.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { FormsModule } from '@angular/forms';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { UserRegistrationComponent } from './user-registration/user-registration.component';
 import { RegistrationConfirmationComponent } from './registration-confirmation/registration-confirmation.component';
 import { ConfirmEqualValidatorDirective } from './confirm-equal-validator.directive';
-import { NgxCaptchaModule } from 'ngx-captcha';
-import { RecaptchaFormsModule } from 'ng-recaptcha';
+import { ViewQuestionComponent } from './view-question/view-question.component';
+import { AdminLevelsComponent } from './admin-levels/admin-levels.component';
+import { DisplayQuestionComponent } from './display-question/display-question.component';
+import { RemoveLevelsComponent } from './remove-levels/remove-levels.component';
+import { RemoveQuestionDisplayComponent } from './remove-question-display/remove-question-display.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +43,12 @@ import { RecaptchaFormsModule } from 'ng-recaptcha';
     NavbarComponent,
     UserRegistrationComponent,
     RegistrationConfirmationComponent,
-    ConfirmEqualValidatorDirective
+    ConfirmEqualValidatorDirective,
+    ViewQuestionComponent,
+    AdminLevelsComponent,
+    DisplayQuestionComponent,
+    RemoveQuestionDisplayComponent,
+    RemoveLevelsComponent
     
   ],
   imports: [
@@ -48,8 +56,7 @@ import { RecaptchaFormsModule } from 'ng-recaptcha';
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    NgxCaptchaModule,
-    RecaptchaFormsModule
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
