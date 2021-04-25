@@ -15,7 +15,7 @@ export class ResultComponent{
   level: string;
   highestMarks: string;
   urlLevel: number;
-
+  
   constructor(private service: RegisterService) { }
 
   result(){

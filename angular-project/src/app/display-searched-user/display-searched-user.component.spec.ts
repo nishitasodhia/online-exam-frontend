@@ -12,7 +12,7 @@ describe('DisplaySearchedUserComponent', () => {
     })
     .compileComponents();
   });
-
+  
   beforeEach(() => {
     fixture = TestBed.createComponent(DisplaySearchedUserComponent);
     component = fixture.componentInstance;

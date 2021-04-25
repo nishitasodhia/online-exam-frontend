@@ -43,7 +43,7 @@ const routes: Routes = [
   {path:'search-user',component:SearchUserComponent},
   {path:'display-searched-user',component:DisplaySearchedUserComponent},
 ];
-
+  
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]

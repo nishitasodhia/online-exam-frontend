@@ -21,3 +21,4 @@ export class StartExamComponent implements OnInit {
 
   }
 }
+ 

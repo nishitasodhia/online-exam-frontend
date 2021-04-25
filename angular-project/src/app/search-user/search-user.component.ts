@@ -23,4 +23,4 @@ export class SearchUserComponent {
       this.router.navigate(['display-searched-user'])
     })
   }
-}
+} 

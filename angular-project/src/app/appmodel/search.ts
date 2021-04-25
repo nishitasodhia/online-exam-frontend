@@ -3,4 +3,5 @@ export class Search{
     level: number;
     city: string;
     state:  string;
+
 }

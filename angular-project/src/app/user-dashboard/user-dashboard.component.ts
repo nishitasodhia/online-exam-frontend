@@ -25,7 +25,7 @@ export class UserDashboardComponent {
     sessionStorage.setItem('subject', String(this.subject));
     this.router.navigate(['levels'])
   }
-
+ 
   sql(text){
     this.subject= text.textContent
     //console.log(this.subject);

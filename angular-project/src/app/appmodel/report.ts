@@ -13,4 +13,5 @@ export class Report{
     level:number;
     score:number;
     attempts:number;
+    
 }

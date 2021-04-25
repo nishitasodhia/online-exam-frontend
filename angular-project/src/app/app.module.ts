@@ -58,7 +58,7 @@ import { DisplaySearchedUserComponent } from './display-searched-user/display-se
     ResultComponent,
     TestHistoryPageComponent,
     DisplaySearchedUserComponent
-  ],
+  ], 
   imports: [
     BrowserModule,
     AppRoutingModule,

@@ -23,3 +23,4 @@ describe('SearchUserComponent', () => {
     expect(component).toBeTruthy();
   });
 });
+

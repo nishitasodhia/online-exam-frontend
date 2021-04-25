@@ -46,7 +46,7 @@ export class RegisterService {
     let url = "http://localhost:8086/adminSearch?subject="+subject+"&level="+level+"&city="+city+"&state="+state;
     return this.http.get(url);
   }
-
+  
   /*checkLoginStatus() : boolean{
     return false;
   }

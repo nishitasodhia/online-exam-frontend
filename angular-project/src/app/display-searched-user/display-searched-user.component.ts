@@ -12,7 +12,7 @@ export class DisplaySearchedUserComponent{
   display : any = JSON.parse(sessionStorage.getItem('userDetails'));
   id : number;
   constructor(private service: RegisterService, private router: Router) {}
-
+ 
   details(value){
     //console.log(value);
       this.service.testHistory(value).subscribe(data =>{
