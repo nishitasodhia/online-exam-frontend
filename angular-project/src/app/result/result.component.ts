@@ -41,7 +41,7 @@ export class ResultComponent{
 
     //this.rid = Number(sessionStorage.getItem('rid'));
     this.service.viewResult(this.srd).subscribe(value =>{
-      alert(JSON.stringify(value))
+      //alert(JSON.stringify(value))
 
           this.score = value['score'];
           this.attempts = value['attempts'];
@@ -49,6 +49,9 @@ export class ResultComponent{
           this.subject = sessionStorage.getItem('subject');
           this.level = sessionStorage.getItem('level');
           })
+  }
+  go(){
+    this.router.navigate(['user-dashboard']);
   }
   }
 
