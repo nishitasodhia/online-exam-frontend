@@ -9,8 +9,8 @@ export class ExamService {
 
   constructor(private http:HttpClient) { }
 
-  getQuestions(subName:string,level:number,status:boolean) : Observable<any> {
-    let url = "http://localhost:9191/viewQue/Java/3/true";
+  getQuestions(subName:string,level:number) : Observable<any> {
+    let url = "http://localhost:9091/viewQue/"+subName+"/"+level+"/"+1;
    return this.http.get(url); 
   }
 

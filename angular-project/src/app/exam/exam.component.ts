@@ -14,14 +14,16 @@ export class ExamComponent implements OnInit {
   subName:string;
   userid:number;
   level:number;
- questions:Questionbankdto[]=[];
+  questions:Questionbankdto[]=[];
+  id: string;
+  questionsid: number[] = [];
   questionIndex:number;
   userResponse : UserResponse[]=[];
- marks:number=0;
- status:boolean;
- // questions:questionbankdto = new questionbankdto();
+  marks:number=0;
+  status:boolean;
+  //questions:questionbankdto = new questionbankdto();
   isSubmitted : boolean = false;
-  givenAnswer: string;
+  givenAnswer: string ='';
 
   
   //Timer
@@ -31,10 +33,19 @@ export class ExamComponent implements OnInit {
   remSec:any;
   constructor(private exam : ExamService,private router:Router) { 
     this.questionIndex=0; 
-    this.level=parseInt(sessionStorage.getItem("level"));
-    this.subName=sessionStorage.getItem("subName");
+    if(sessionStorage.getItem('level')=='Level 1'){
+      this.level=1;
+    }
+    else if(sessionStorage.getItem('level')=='Level 2'){
+      this.level=2;
+    }
+    else{
+      this.level=3;
+    }
     
-    this.exam.getQuestions(this.subName,this.level,this.status).subscribe(data=>{
+    this.subName=sessionStorage.getItem("subject");
+    
+    this.exam.getQuestions(this.subName,this.level).subscribe(data=>{
     //this.questions=data;
       console.log(data);
       console.log(data.length);
@@ -87,15 +98,18 @@ export class ExamComponent implements OnInit {
         // console.log(this.questions[this.questionIndex].option4);
         r = (this.questions[this.questionIndex].option4).toString();
         break;
+        default: 
+        r = '';
     }
     this.selectedAnswer = r;
   }
 
   userName: UserResponse;
   saveAns(){
+    console.log(this.questions[this.questionIndex].id);
     this.givenAnswer = this.selectedAnswer;
     console.log(this.givenAnswer);
-    this.userName = new UserResponse(this.questionIndex, this.givenAnswer)
+    this.userName = new UserResponse(this.questions[this.questionIndex].id, this.givenAnswer)
     this.userResponse.push(this.userName)
   }
   change(i){
@@ -119,17 +133,33 @@ export class ExamComponent implements OnInit {
       //  this.userResponse[this.questionIndex].questionId=this.questions[this.questionIndex].id;
       
        let i:number;
-       for(i=0;i<this.questions.length;i++){     
-        if(this.userResponse[i].answerGiven==this.questions[i].correctAnswer){
-      
-         this.marks+=10;
-         }
+
+       if(this.userResponse.length==0){
+         console.log("in if condition");
+         this.marks=0;
        }
-      console.log(this.userResponse);
-     alert("You scored "+this.marks+" marks");
+       else{
+        console.log("in else condition");
+          for(i=0;i<this.userResponse.length;i++){ 
+            if(this.userResponse[i].questionId==this.questions[i].id){ 
+              console.log("in 1st if condition"); 
+              console.log(this.userResponse); 
+              console.log(this.questions[i]);
+              if(this.userResponse[i].answerGiven==this.questions[i].correctAnswer){
+                console.log("in 2nd if condition");
+                console.log(this.userResponse[i].answerGiven==this.questions[i].correctAnswer);
+                this.marks+=10;
+              }
+            }
+      
+          }
     }
+    console.log(this.userResponse);
+    sessionStorage.setItem('marks', this.marks.toString());
+    alert("You scored "+this.marks+" marks");
+   }
+}
  
-    }
   //Timer
  //countDown   = setInterval(() =>      
   //this.secpass(), 1000);

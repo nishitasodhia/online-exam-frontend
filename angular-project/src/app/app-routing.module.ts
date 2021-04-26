@@ -6,6 +6,7 @@ import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.compo
 import { AdminLevelsComponent } from './admin-levels/admin-levels.component';
 import { DisplayQuestionComponent } from './display-question/display-question.component';
 import { DisplaySearchedUserComponent } from './display-searched-user/display-searched-user.component';
+import { ExamComponent } from './exam/exam.component';
 import { HomeComponent } from './home/home.component';
 import { LevelsComponent } from './levels/levels.component';
 import { LoginComponent } from './login/login.component';
@@ -42,6 +43,7 @@ const routes: Routes = [
   {path:'test-history-page',component:TestHistoryPageComponent},
   {path:'search-user',component:SearchUserComponent},
   {path:'display-searched-user',component:DisplaySearchedUserComponent},
+  {path:'app-exam',component:ExamComponent},
 ]; 
 
 @NgModule({

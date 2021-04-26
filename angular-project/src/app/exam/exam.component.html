@@ -28,9 +28,11 @@
     <div id="timer">{{countDiv}}</div>
  </div> -->
 
- <div class="middle">
+ <div class="middle" *ngIf = "questions[questionIndex].question">
     <p>{{questionIndex+1}}.{{questions[questionIndex].question}}</p>
     <div class="option">
+
+    <input type="hidden" name="id" value={{questions[questionIndex].id}} [(ngModel)]= "id">
 
     <input type="radio" id="option1" name="options" value="1" (click)="save('option1')" [(ngModel)]= "givenAnswer">{{questions[questionIndex].option1}}<br>
     <input type="radio" id="option2" name="options" value="2" (click)="save('option2')" [(ngModel)]= "givenAnswer" >{{questions[questionIndex].option2}}<br>

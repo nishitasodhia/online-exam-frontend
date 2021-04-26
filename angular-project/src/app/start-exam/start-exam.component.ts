@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { RouteConfigLoadEnd, Router } from '@angular/router';
 
 @Component({
   selector: 'start-exam',
@@ -9,7 +10,7 @@ export class StartExamComponent implements OnInit {
   subject: string;
   level: string;
   attempts: string;
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
     this.subject= sessionStorage.getItem('subject');
@@ -18,6 +19,6 @@ export class StartExamComponent implements OnInit {
   }
   
   fetchQuestions(){
-
+    this.router.navigate(['app-exam'])
   }
 }
