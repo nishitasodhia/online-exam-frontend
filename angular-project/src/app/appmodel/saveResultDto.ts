@@ -6,6 +6,6 @@ export class SaveResultDto{
     attempts: number;
     level: number;
     score: number;
-    sid : subject = new subject();
-    uid : User = new User();
+    subject : subject = new subject();
+    user : User = new User();
 }

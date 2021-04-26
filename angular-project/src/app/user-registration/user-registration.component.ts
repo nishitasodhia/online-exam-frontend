@@ -36,6 +36,7 @@ export class UserRegistrationComponent {
       //alert(JSON.stringify(data));
       if(data["status"] == true) {
         sessionStorage.setItem('userId', data["registeredUserId"]);
+        alert("Registration successful");
         this.router.navigate(['login']);
       }
     })
