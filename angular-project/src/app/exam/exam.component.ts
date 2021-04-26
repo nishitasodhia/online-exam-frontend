@@ -25,13 +25,20 @@ export class ExamComponent implements OnInit {
   //questions:questionbankdto = new questionbankdto();
   isSubmitted : boolean = false;
   givenAnswer: string ='';
-
+  loaded:boolean=false;
   
+
+
   //Timer
   sec:any = 600;
-  countDown:any;
+  countDiv:any;
   min:any;
   remSec:any;
+
+
+
+
+
   constructor(private exam : ExamService,private router:Router) { 
     this.questionIndex=0; 
     if(sessionStorage.getItem('level')=='Level 1'){
@@ -61,12 +68,14 @@ export class ExamComponent implements OnInit {
         temp.option4=data[i].option4;
         temp.correctAnswer=data[i].correctAnswer;
         this.questions.push(temp);
+        this.loaded=true;
+        console.log(this.loaded);
       }
     })
    
   }
 
-  ngOnInit(): void {
+  ngOnInit() {
   }
  //  ngAfterViewInit(){
   //    this.length=this.questions.length;
@@ -106,21 +115,25 @@ export class ExamComponent implements OnInit {
   }
 
   userName: UserResponse;
-  saveAns(){
-    console.log(this.questions[this.questionIndex].id);
-    this.givenAnswer = this.selectedAnswer;
-    console.log(this.givenAnswer);
-    this.userName = new UserResponse(this.questions[this.questionIndex].id, this.givenAnswer)
-    this.userResponse.push(this.userName)
-  }
+  // saveAns(){
+  //   console.log(this.questions[this.questionIndex].id);
+  //   this.givenAnswer = this.selectedAnswer;
+  //   console.log(this.givenAnswer);
+  //   this.userName = new UserResponse(this.questions[this.questionIndex].id, this.givenAnswer)
+  //   this.userResponse.push(this.userName)
+  // }
   change(i){
   this.questionIndex = i;
   }
-//   public nextQues(){
-//     // this.userResponse[this.questionIndex].answerGiven=this.givenAnswer;
-//     // this.userResponse[this.questionIndex].questionId=this.questions[this.questionIndex].id;
-//     this.questionIndex++;
-//  }
+  public nextQues(){
+    this.givenAnswer = this.selectedAnswer;
+    this.userName = new UserResponse(this.questions[this.questionIndex].id, this.givenAnswer)
+    this.userResponse.push(this.userName);
+    this.givenAnswer='';
+  // this.userResponse[this.questionIndex].answerGiven=this.givenAnswer;
+  // this.userResponse[this.questionIndex].questionId=this.questions[this.questionIndex].id;
+    this.questionIndex++;
+  }
 
 //    public prevQues(){
 //     // this.userResponse[this.questionIndex].questionId=this.questions[this.questionIndex].id;
@@ -128,54 +141,62 @@ export class ExamComponent implements OnInit {
 //   }
  
 
-   public submit(){
-       this.isSubmitted=true;
-       this.questions[this.questionIndex].id;
-      //  this.userResponse[this.questionIndex].questionId=this.questions[this.questionIndex].id;
-      
-       let i:number;
-
-       if(this.userResponse.length==0){
-         console.log("in if condition");
-         this.marks=0;
-       }
-       else{
-        console.log("in else condition");
-          for(i=0;i<this.userResponse.length;i++){ 
-            if(this.userResponse[i].questionId==this.questions[i].id){ 
-              console.log("in 1st if condition"); 
-              console.log(this.userResponse); 
-              console.log(this.questions[i]);
-              if(this.userResponse[i].answerGiven==this.questions[i].correctAnswer){
-                console.log("in 2nd if condition");
-                console.log(this.userResponse[i].answerGiven==this.questions[i].correctAnswer);
-                this.marks+=10;
-              }
-            }
-      
-          }
-    }
-    console.log(this.userResponse);
-    sessionStorage.setItem('marks', this.marks.toString());
-    alert("You scored "+this.marks+" marks");
-    this.router.navigate(['result']);
+public submit(){
+  if(this.givenAnswer!=''){
+    this.givenAnswer = this.selectedAnswer;
+    this.userName = new UserResponse(this.questions[this.questionIndex].id, this.givenAnswer)
+    this.userResponse.push(this.userName);
+    this.givenAnswer='';
+  }
+ 
+   this.isSubmitted=true;
+   this.questions[this.questionIndex].id;
+  //  this.userResponse[this.questionIndex].questionId=this.questions[this.questionIndex].id;
+  
+   let i:number;
+   let u:boolean=true;
+   if(this.userResponse.length==0){
+     this.marks=0;
+ 
    }
+   else if(this.userResponse.length<this.questions.length){
+    u=confirm("Are you sure you want to submit your test")
+  }
+   if(u){
+   
+   for(i=0;i<this.userResponse.length;i++){ 
+    if(this.userResponse[i].questionId==this.questions[i].id){   
+    if(this.userResponse[i].answerGiven==this.questions[i].correctAnswer){
+     console.log(this.userResponse[i].answerGiven==this.questions[i].correctAnswer);
+     this.marks+=10;
+    //  alert("You scored "+this.marks+" marks");
+
+     }
+   }
+  
 }
+console.log(this.userResponse);
+    sessionStorage.setItem('marks', this.marks.toString());
+    
+    this.router.navigate(['result']);
+}
+    
+   }
+
  
   //Timer
- //countDown   = setInterval(() =>      
-  //this.secpass(), 1000);
-
-//public secpass():any {
-    //'use strict';    
-     //this.min  = Math.floor(this.sec / 60);
-       // this.remSec  = this.sec % 60;    
-   // if (this.remSec < 10) {        
-     //   this.remSec = '0' + this.remSec;    
-/* }
-if (this.min < 10) {        
+    countDown   = setInterval(() =>      
+    this.secpass(), 1000);
+    public secpass():any {
+    'use strict';    
+       this.min  = Math.floor(this.sec / 60);
+       this.remSec  = this.sec % 60;    
+         if (this.remSec < 10) {        
+              this.remSec = '0' + this.remSec;    
+          }
+     if (this.min < 10) {        
     this.min = '0' + this.min;    
-}
+  }
 if(this.min==0 && this.sec==0 && this.isSubmitted==false){
 
   this.submit();
@@ -188,5 +209,5 @@ if (this.sec > 0) {
 else {        
     clearInterval(this.countDown);               
 }
-} */
-
+} 
+}

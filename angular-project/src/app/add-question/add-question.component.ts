@@ -27,11 +27,12 @@ export class AddQuestionComponent implements OnInit {
   add(){
     
    this.ques.subject.id=this.subName;
-   alert(JSON.stringify(this.ques))
+  //  alert(JSON.stringify(this.ques))
     this.questionService.addQuestion(this.ques).subscribe(data =>{
-      alert(JSON.stringify(data));
+      // alert(JSON.stringify(data));
+      alert("Question added successfully!");
       data=this.ques;
-      
+    window.location.reload();
     })
   }
     /*fetchSubject(){
