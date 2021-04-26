@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SaveResultDto } from '../appmodel/saveResultDto';
 import { RegisterService } from '../register.service';
 
 @Component({
@@ -15,8 +16,11 @@ export class ResultComponent{
   level: string;
   highestMarks: string;
   urlLevel: number; 
+  uid: number;
+  sid: number;
+  srd : SaveResultDto = new SaveResultDto();
 
-  constructor(private service: RegisterService) { }
+  constructor(private service: RegisterService) {}
 
   result(){
     if(sessionStorage.getItem('level')=="Level 1"){
@@ -28,16 +32,23 @@ export class ResultComponent{
     else{
       this.urlLevel = 3;
     }
-      this.rid = Number(sessionStorage.getItem('rid'));
-      this.service.viewResult(3, sessionStorage.getItem('subject'), Number(sessionStorage.getItem('userId')),
-      this.urlLevel).subscribe(value =>{
-      this.score = value['score'];
-      this.attempts = value['attempts'];
-      this.status = value['status'];
-      this.subject = sessionStorage.getItem('subject');
-      this.level = sessionStorage.getItem('level');
-      this.highestMarks = value['highestMarks']
-  })
+   
+    this.srd.score = Number(sessionStorage.getItem('marks'));
+    this.srd.attempts = Number(sessionStorage.getItem('attempts'));
+    this.srd.level = this.urlLevel;
+    this.srd.uid.id = Number(sessionStorage.getItem('userId'));
+    this.srd.sid.id = Number(sessionStorage.getItem('sid'));    
+
+    //this.rid = Number(sessionStorage.getItem('rid'));
+    this.service.viewResult(this.srd).subscribe(value =>{
+      alert(JSON.stringify(value))
+
+          this.score = value['score'];
+          this.attempts = value['attempts'];
+          this.status = value['status'];
+          this.subject = sessionStorage.getItem('subject');
+          this.level = sessionStorage.getItem('level');
+          })
   }
 
 }

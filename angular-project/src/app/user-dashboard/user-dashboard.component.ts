@@ -23,6 +23,7 @@ export class UserDashboardComponent {
     this.subject= text.textContent
     //console.log(this.subject);
     sessionStorage.setItem('subject', String(this.subject));
+    sessionStorage.setItem('sid','1');
     this.router.navigate(['levels'])
   }
  
@@ -30,6 +31,7 @@ export class UserDashboardComponent {
     this.subject= text.textContent
     //console.log(this.subject);
     sessionStorage.setItem('subject', String(this.subject));
+    sessionStorage.setItem('sid','2');
     this.router.navigate(['levels'])
   }
 
@@ -37,6 +39,7 @@ export class UserDashboardComponent {
     this.subject= text.textContent
     //console.log(this.subject);
     sessionStorage.setItem('subject', String(this.subject));
+    sessionStorage.setItem('sid','3');
     this.router.navigate(['levels'])
   }
 

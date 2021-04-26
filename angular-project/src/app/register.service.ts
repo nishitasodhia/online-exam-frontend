@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Login } from './appmodel/login';
+import { SaveResultDto } from './appmodel/saveResultDto';
 import { User } from './appmodel/user';
 
 @Injectable({
@@ -32,9 +33,9 @@ export class RegisterService {
     return this.http.get(url);
   }
 
-  viewResult(rid: number, sName: String, uid: number, level: number){
-    let url = "http://localhost:9091/rid?rid="+rid+"&sName="+sName+"&uid="+uid+"&level="+level;
-    return this.http.get(url);
+  viewResult(srd: SaveResultDto){
+    let url = "http://localhost:9091/result";
+    return this.http.post(url,srd);
   }
 
   testHistory(uid: number){

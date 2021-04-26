@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { Questionbankdto } from '../appmodel/questionbankdto';
 import { UserResponse } from '../appmodel/userResponse';
 import { ExamService } from '../exam.service';
+import { RegisterService } from '../register.service';
 
 @Component({
   selector: 'app-exam',
@@ -157,6 +158,7 @@ export class ExamComponent implements OnInit {
     console.log(this.userResponse);
     sessionStorage.setItem('marks', this.marks.toString());
     alert("You scored "+this.marks+" marks");
+    this.router.navigate(['result']);
    }
 }
  
