@@ -1,19 +1,20 @@
 
 <form #loginForm="ngForm" (ngSubmit) = "loginCheck()">
+    <h2>Login</h2>
     <label>User name :</label>
-        <input type = "email" required #email="ngModel" name="username" [(ngModel)]="login.email"/><br/>
+        <input type = "email" required #email="ngModel" class="form-control" name="username" [(ngModel)]="login.email"/><br/>
         <div *ngIf="email.invalid && (email.dirty || email.touched)">
         <div *ngIf="email.errors.required">Email is required</div>
         </div>
 
 
     <label>Password :</label>
-        <input type = "password" required #password="ngModel" name="pass" [(ngModel)]="login.password"/><br/>
+        <input type = "password" required #password="ngModel" class="form-control" name="pass" [(ngModel)]="login.password"/><br/>
         <div *ngIf="password.invalid && (password.dirty || password.touched)">
         <div *ngIf="password.errors.required">Password is required</div>
         </div>
 
-    <button [disabled]="!loginForm.form.valid" type="submit" >Login</button>
+    <button [disabled]="!loginForm.form.valid" class="btn" type="submit" >Login</button>
 </form>
 <p>Don't have an Account
 <a href="http://localhost:4200/user-registration">Register Here</a>

@@ -1,14 +1,35 @@
 form{
-    text-align: center;
-    margin: auto;
-    padding: 20px;
+
+    margin-top: 1%;
+    width: 40%;
+    margin-left: 25%;
+    padding: 3%;
+    border: 1px solid black;
     line-height: 3em;
+    box-shadow: 5px 5px rgb(207, 207, 207)
+}
+.form-control{
+    width: 100%;
+    padding: 1%;
+    border-radius: 5px 5px;
+}
+.btn{
+    margin-top: 1%;
+    text-align: center;
+    display: block;
+    margin-left: 45%;
+    padding: 1%;
+    width: 15%;
+    border-radius: 5px 5px;
+    color: white;
+    background-image: linear-gradient(to bottom, rgb(124, 43, 124), rgb(0, 0, 146));
+}
+
+.btn:hover{
+    cursor: pointer;
+    background-image: linear-gradient(to top, rgb(124, 43, 124), rgb(0, 0, 146));
 }
 div#container div{
     color: #a94442;
     background-color: pink;
-}
-p{
-    text-align: center;
-    margin: auto;
 }

@@ -1,1 +1,16 @@
-  
+.btn{
+    margin-top: 1%;
+    text-align: center;
+    display: block;
+    margin-left: 45%;
+    padding: 1%;
+    width: 15%;
+    border-radius: 5px 5px;
+    color: white;
+    background-image: linear-gradient(to bottom, rgb(124, 43, 124), rgb(0, 0, 146));
+}
+
+.btn:hover{
+    cursor: pointer;
+    background-image: linear-gradient(to top, rgb(124, 43, 124), rgb(0, 0, 146));
+}

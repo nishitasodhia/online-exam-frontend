@@ -1,14 +1,15 @@
-<div class = "centerdiv">
-    <form #registerform="ngForm" (ngSubmit) = "add()">
+
+  <form #registerform="ngForm" (ngSubmit) = "add()">
+    <h2>Registration</h2>
         <label>Date Of Birth: </label>
-            <input type="date" required name="dob" #dob="ngModel" [(ngModel)] =user.dateOfBirth/><br /> 
+            <input type="date" required name="dob" class="form-control" #dob="ngModel" [(ngModel)] =user.dateOfBirth/><br /> 
             <div *ngIf="dob.invalid && (dob.dirty || dob.touched)">
                 <div *ngIf="dob.errors.required">Date of birth is required</div>
             </div>
 
 
         <label>First Name: </label>
-            <input type="text" required minlength="3" pattern="^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$" #firstName="ngModel" name="fname" [(ngModel)] =user.firstName/><br />
+            <input type="text"  class="form-control" required minlength="3" pattern="^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$" #firstName="ngModel" name="fname" [(ngModel)] =user.firstName/><br />
         
         <div *ngIf="firstName.invalid && (firstName.dirty || firstName.touched)">
             <div *ngIf="firstName.errors.required">First name is required</div>
@@ -17,7 +18,7 @@
         </div>
 
         <label>Middle Name: </label>
-            <input type="text" name="mname" #middleName="ngModel" [(ngModel)] =user.middleName/><br />
+            <input type="text" name="mname"  class="form-control" #middleName="ngModel" [(ngModel)] =user.middleName/><br />
 
         <!--<div *ngIf="middleName.invalid && (middleName.dirty || middleName.touched)">
             <div *ngIf="middleName.errors.required" class="alert alert-danger">Middle name is required</div>
@@ -25,7 +26,7 @@
 
 
         <label>Last Name: </label>
-            <input type="text" name="lname" required pattern="^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$" #lastName="ngModel" [(ngModel)] =user.lastName/><br />
+            <input type="text" name="lname"  class="form-control" required pattern="^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$" #lastName="ngModel" [(ngModel)] =user.lastName/><br />
 
         <div *ngIf="lastName.invalid && (lastName.dirty || lastName.touched)">
         <div *ngIf="lastName.errors.required">Last name is required</div>
@@ -34,7 +35,7 @@
 
 
         <label>Gender: </label>
-            <select  name="gender" required #gender="ngModel" [(ngModel)] =user.gender>
+            <select  name="gender"  class="form-control" required #gender="ngModel" [(ngModel)] =user.gender>
                 <option>Female</option>
                 <option>Male</option>
                 <option>Others</option>
@@ -45,7 +46,7 @@
 
 
         <label>Phone Number: </label>
-            <input type="tel" name="phone" required maxlength="10" #phoneNo="ngModel" pattern="^[0-9]\d{9}$" [(ngModel)] =user.phoneNo/><br />
+            <input type="tel" name="phone"  class="form-control" required maxlength="10" #phoneNo="ngModel" pattern="^[0-9]\d{9}$" [(ngModel)] =user.phoneNo/><br />
             <div *ngIf="phoneNo.invalid && (phoneNo.dirty || phoneNo.touched)">
                 <div *ngIf="phoneNo.errors.required">Phone number is required</div>
                 <div *ngIf="phoneNo.errors.maxlength">Phone number should be of 10 digits.</div>
@@ -54,7 +55,7 @@
         
 
         <label>Email: </label>
-            <input type="email" name="email1" required pattern="^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$" #email="ngModel" [(ngModel)] =user.email/><br />
+            <input type="email" name="email1"  class="form-control" required pattern="^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$" #email="ngModel" [(ngModel)] =user.email/><br />
             <div *ngIf="email.invalid && (email.dirty || email.touched)">
                 <div *ngIf="email.errors.required">Email is required</div>
                 <div *ngIf="email.errors.pattern">Email should be of type jack@domain.com</div>
@@ -63,7 +64,7 @@
         <div ngModelGroup="passwordGroup">
         <div id = "match">
             <label>Password:</label>
-                <input type="password" name="password1" required 
+                <input type="password"  class="form-control" name="password1" required 
                     pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$" 
                     (input)="confirmPassword.control.updateValueAndValidity()"
                     #password="ngModel" [(ngModel)] =user.password/><br />
@@ -78,7 +79,7 @@
                 </div>
             <div>   
             <label>Confirm Password: </label>
-                <input type="password" name="confirmPassword" appConfirmEqualValidator="password1" required #confirmPassword="ngModel" [(ngModel)] =user.confirmPassword/><br /> 
+                <input type="password" name="confirmPassword"  class="form-control" appConfirmEqualValidator="password1" required #confirmPassword="ngModel" [(ngModel)] =user.confirmPassword/><br /> 
                 <div *ngIf="confirmPassword.invalid && (confirmPassword.dirty || confirmPassword.touched)">
                 <div *ngIf="confirmPassword.errors.required">This field is required</div>
                 <div *ngIf="confirmPassword.touched && confirmPassword.errors.notEqual && !confirmPassword.errors.required">Password and confirmPassword does not match.</div>
@@ -88,25 +89,25 @@
 
         </div>
         <label>Qualification: </label>
-            <input type="text" name="qualification" [(ngModel)] =user.qualification/><br /> 
+            <input type="text" name="qualification"  class="form-control" [(ngModel)] =user.qualification/><br /> 
 
 
 
         <label>City:</label>
-            <input type="text" name="city" required #city="ngModel" [(ngModel)] =user.city/><br /> 
+            <input type="text" name="city"  class="form-control" required #city="ngModel" [(ngModel)] =user.city/><br /> 
             <div *ngIf="city.invalid && (city.dirty || city.touched)">
                 <div *ngIf="city.errors.required">City is required</div>
             </div>
 
 
         <label>State:</label>
-            <input type="text" name="state" required #state="ngModel" [(ngModel)] =user.state/><br />  
+            <input type="text" name="state"  class="form-control" required #state="ngModel" [(ngModel)] =user.state/><br />  
             <div *ngIf="state.invalid && (state.dirty || state.touched)">
                 <div *ngIf="state.errors.required">State is required</div>
             </div>
-        <button [disabled]="!registerform.form.valid" type="submit">Register</button>
+        <button [disabled]="!registerform.form.valid" class="btn" type="submit">Register</button>
     </form>
-</div>
+
     
 
 

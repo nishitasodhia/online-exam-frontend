@@ -28,7 +28,7 @@
   
   .side {
       float: left;
-      padding: 20px;
+      padding: 2%;
       width: 25%;
       background-color: lavender;
       height: 475px;
@@ -62,13 +62,12 @@
   
   
   .top button{    
-    background-color: lightblue; 
-    color: black; 
-    padding: 1%;
+    background-color: rgb(148, 79, 148); 
+    color: white; 
+    padding: 0.5%;
     text-align: center;
     text-decoration: none;
-    display: inline-block;   
-    font-size: 16px;
+    display: inline-block;
    margin-right: 1%;
     transition-duration: 0.4s;
     cursor: pointer; 
@@ -86,17 +85,40 @@
     cursor: pointer; 
   }
   
-  .prev {
-    position: relative;
-    bottom: -100px;
-    right: -300px;
-  }
-  
-  .next {
-    position: relative;
-    bottom: -100px;
-    left: 325px;
-  }
+  .btn{
+    margin-top:1%;
+    display: inline;
+    text-align: center;
+    display: block;
+    margin-left: 25%;
+    padding: 1%;
+    width: 15%;
+    border-radius: 5px 5px;
+    color: white;
+    background-image: linear-gradient(to bottom, rgb(124, 43, 124), rgb(0, 0, 146));
+}
+
+.btn:hover{
+    cursor: pointer;
+    background-image: linear-gradient(to top, rgb(124, 43, 124), rgb(0, 0, 146));
+}
+.btn-sub{
+  margin-top:1%;
+  display: inline;
+  text-align: center;
+  display: block;
+  margin-left: 25%;
+  padding: 1%;
+  width: 15%;
+  border-radius: 5px 5px;
+  color: white;
+  background-image: linear-gradient(to bottom, rgb(14, 168, 0), rgb(0, 146, 73));
+}
+
+.btn-sub:hover{
+  cursor: pointer;
+  background-image: linear-gradient(to top, rgb(124, 43, 124), rgb(0, 0, 146));
+}
   
   .submit {
     float:right;
@@ -104,13 +126,6 @@
   
   .button:hover {
     background-color: steelblue;
-    color: white;
-  }
-  
-  footer {
-    background-color:darkblue;
-    padding: 15px;
-    text-align: center;
     color: white;
   }
   

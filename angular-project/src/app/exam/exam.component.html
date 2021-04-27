@@ -1,12 +1,5 @@
-<div class="header">
-    <b>Hackathon</b>
-</div>
-<div class="top">
-<button (click)="change(i)" *ngFor="let ques of questions;index as i">{{i+1}}</button>
-</div> 
-<div class="topnav">
-    <button type="submit" class="button submit"(click)="submit()">Submit Test</button>
-</div> 
+
+
 <div class="side">
     Time Left:
     <div id="timer">{{countDiv}}</div>
@@ -24,10 +17,15 @@
     <input type="radio" id="option4" name="options" value="4" (click)="save('option4')" [(ngModel)]= "givenAnswer">{{questions[questionIndex].option4}}<br>
 </div>
   
-    <button class="button" value="Save" (click)="saveAns()">Save</button>
-    
-    <button *ngIf="questionIndex < questions.length-1" class="button" value="next" (click)="nextQues()">Next</button> 
-<footer>
-    <p>@Hackathon.inc</p>
-</footer>
+    <div class="top">
+        <button (click)="change(i)" *ngFor="let ques of questions;index as i">{{i+1}}</button>
+    </div> 
+    <div style="display: inline;">
+        <!-- <button class="btn" value="Save" (click)="saveAns()">Save</button> -->
+        <button *ngIf="questionIndex < questions.length-1" class="btn" value="next" (click)="nextQues()">Next</button> 
+    </div>
+    <!-- <div class="topnav"> -->
+        <button type="submit" class="btn-sub"(click)="submit()">Submit Test</button>
+    <!-- </div>  -->
+
 

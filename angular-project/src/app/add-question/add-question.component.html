@@ -54,6 +54,6 @@
             <div id ="container" *ngIf="levels.invalid && (levels.dirty || levels.touched)">
                 <div *ngIf="levels.errors.required">Level is required</div>
             </div><br />
-        <button [disabled]="!addQuestionForm.form.valid" type= "submit">Add Question</button>
+        <button [disabled]="!addQuestionForm.form.valid"   class="btn" type= "submit">Add Question</button>
     </form>
 </div>

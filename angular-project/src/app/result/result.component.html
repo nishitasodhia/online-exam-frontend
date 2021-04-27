@@ -2,7 +2,7 @@
 <h2>Score: {{score}}</h2>
 <h2>{{attempts}} attempt(s)</h2>
 <h2>Status: {{status}}</h2>
-<button (click) = "go()">Go to home</button>
-<button *ngIf="score>=30">Next level</button>
+<button class="btn"  (click) = "go()">Go to home</button>
+<button class="btn" *ngIf="score>=30">Next level</button>
 
-<button *ngIf="score<20">Try again</button>
+<button  class="btn" *ngIf="score<20">Try again</button>

@@ -1,9 +1,19 @@
 .header{
-    padding: 30px;
+    padding: 7%;
     text-align: center;
-    background: white;
-    background-color: rgb(21, 179, 42);
+    background-image: url("../assets/bg.jpg");
+    color: transparent;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 .header h1 {
-    font-size: 50px;
+    font-size: 80px;
 }
+
+.footer {
+    background-color:black;
+    width: 100%;
+    padding: 1%;
+    text-align: center;
+    color: white;
+  }

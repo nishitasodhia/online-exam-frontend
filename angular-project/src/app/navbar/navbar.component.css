@@ -2,7 +2,7 @@
 
     overflow: hidden;
 
-    background-color: rgb(79, 82, 42);
+    background-color: black;
 
 }
 
@@ -27,6 +27,8 @@
     background-color: #ddd;
 
     color: black;
+
+    transition: 0.3s ease-in;
 
   }
   
