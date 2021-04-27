@@ -11,7 +11,7 @@
         <tbody>
             <tr *ngFor="let data of testHistory">
                 <td [ngClass]="{'green' : data.score > 69, 'red' : data.score < 70}">{{data.subName}}</td>
-                <td [ngClass]="{'green' : data.score > 69, 'red' : data.score < 70}">{{data.level}}</td>
+                <td [ngClass]="{'green' : data.score > 69, 'red' : data.score < 70}">{{data.rLevel}}</td>
                 <td [ngClass]="{'green' : data.score > 69, 'red' : data.score < 70}">{{data.attempts}}</td>
                 <td [ngClass]="{'green' : data.score > 69, 'red' : data.score < 70}">{{data.score}}</td>
             </tr>
